@@ -1,0 +1,166 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>AVnalytics</title>
+
+<script type="text/javascript" src="./js/jquerymin.js"></script>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+
+<style>
+.preloader {
+    height:350px; background:url(./images/ajax-loaderc.gif) center center no-repeat;
+}
+
+.demo{
+		border: 0 !important;  /*Removes border*/
+		-webkit-appearance: none;  /*Removes default chrome and safari style*/
+		-moz-appearance: none; /* Removes Default Firefox style*/
+		background: #6E6E6E url(/images/select-arrow.gif) no-repeat 90% center;
+		width: 100px; /*Width of select dropdown to give space for arrow image*/
+		text-indent: 0.01px; /* Removes default arrow from firefox*/
+		text-overflow: "";  /*Removes default arrow from firefox*/ /*My custom style for fonts*/
+		color: #FFF;
+		border-radius: 15px;
+		padding: 5px;
+		box-shadow: inset 0 0 5px rgba(000,000,000, 0.5);
+	}
+	.demo select.balck {
+		background-color: #000;
+	}
+	.demo select.option3 {
+		border-radius: 10px 0;
+	}
+</style>
+
+<link rel="stylesheet" href="./css/style.css">
+
+</head>
+<body style="padding-top:60px; padding-bottom:60px">
+
+<div>
+
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">AVnalytics</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="Home.html">Home</a></li>
+        <li class="active"><a href="Home.html">Analysis</a></li>
+        <li><a href="About.html">About</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+</div>
+
+
+
+<div class="navbar navbar-inverse navbar-fixed-bottom">
+	<div class="container">
+		<p><font color="white">© CMPE 272. Team 26.</font></p>
+	</div>
+</div>
+
+
+
+<div class="btn-row" style="padding-top:25px">
+	<div class="btn-group btn-group-justified">
+		<div class="btn-group">
+			<a class="btn btn-pt btn-info" href="FatalitiesbyModelnMake.html">Fatalities by Aircraft Model</a>
+		</div>
+		<div class="btn-group">
+			<a class="btn btn-pt btn-danger" href="FatalitiesbyState.html">Fatalities by States</a>
+		</div>
+		<div class="btn-group">
+			<a class="btn btn-pt btn-success" href="FlightPhaseEffect.html">Flight Phase Effect</a>
+		</div>
+		<div class="btn-group">
+			<a class="btn btn-pt btn-primary" href="LightCondEffects.html">Light Condition Effect</a>
+		</div>
+		<div class="btn-group">
+			<a class="btn btn-pt btn-warning" href="Causesaswordcloud.html">Major Causes WordCloud</a>
+		</div>
+		<div class="btn-group">
+			<a class="btn btn-pt btn-info" href="CausesDetailTree.html">Detailed Causes WordTree</a>
+		</div>
+		<div class="btn-group">
+			<a class="btn btn-pt btn-danger" href="Geochart.html">Geomapping</a>
+		</div>
+	</div>
+</div>
+
+
+ 	<script type="text/javascript" src="./js/jquerymin.js"></script>
+		<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+     	<script src="http://code.highcharts.com/highcharts.js"></script>
+        <script  src="http://code.highcharts.com/modules/exporting.js"></script>
+        <script type="text/javascript" src="./js/highcharts-3d.js"></script>       
+        <script type="text/javascript" src="./js/FlightPhaseStats.js"></script>
+        <script type="text/javascript" src="./js/themes/sand-signika.js"></script>
+        
+   <div class="container">    
+    <p class="description">This chart shows accident count for accidents that have occured during various phases of flight over years from 1980-2013</p>
+        
+<div id="pie-div" style="margin-top: 100px; margin-left:50px; margin-bottom:30px;margin-right:25px;"><div id="loader1" style="height:350px; background:url(./images/ajax-loaderc.gif) center center no-repeat;"></div></div>
+
+
+
+
+<div id="ddlPhase" style="margin-top:30px;">
+
+<p class="description">Select a flight phase to view accident count for particular phase over years 1980-2013</p>
+
+<select id="sel_phase" style="margin-top:5px; margin-bottom:20px; margin-left:30px;" class="demo">
+<option value="---Select---">---Select---</option>
+<option value="510">Taxi</option>
+<option value="500">Standing</option>
+<option value="530">Climb</option>
+<option value="520">Takeoff</option>
+<option value="522">Takeoff-initial climb</option>
+<option value="540">Cruise</option>
+<option value="580">Maneuvering</option>
+<option value="590">Hover</option>
+<option value="550">Descent</option>
+<option value="570">Landing</option>
+<option value="574">Emergency Landing</option>
+<option value="571">Landing - flare/touchdown</option>
+<option value="576">Emergency descent/landing</option>
+<option value="564">Approach - VFR pattern - final approach</option>
+<option value="560s">Approach</option>
+
+
+</select>
+
+</div>
+
+</div>
+
+<div id="column-chart" style="margin-top:35px; margin-left:20px;"><div id="loader2" style="height:350px; background:url(./images/ajax-loaderc.gif) center center no-repeat;"></div></div>
+
+
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+</body>
+</html>

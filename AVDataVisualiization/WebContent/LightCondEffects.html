@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>AVnalytics</title>
+
+<script type="text/javascript" src="./js/jquerymin.js"></script>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="./css/style.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+<style>
+.preloader {
+    height:350px; background:url(./images/ajax-loaderc.gif) center center no-repeat;
+}
+
+</style>
+</head>
+<body style="padding-top:60px; padding-bottom:60px">
+
+<div>
+
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="Home.html">AVnalytics</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="Home.html">Home</a></li>
+        <li class="active"><a href="OurWork.html">Analysis</a></li>
+        <li><a href="About.html">About</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+</div>
+
+
+
+<div class="navbar navbar-inverse navbar-fixed-bottom">
+	<div class="container">
+		<p><font color="white">© CMPE 272. Team 26.</font></p>
+	</div>
+</div>
+
+
+
+<div class="btn-row" style="padding-top:25px">
+	<div class="btn-group btn-group-justified">
+		<div class="btn-group">
+			<a class="btn btn-pt btn-info" href="FatalitiesbyModelnMake.html">Fatalities by Aircraft Model</a>
+		</div>
+		<div class="btn-group">
+			<a class="btn btn-pt btn-danger" href="FatalitiesbyState.html">Fatalities by States</a>
+		</div>
+		<div class="btn-group">
+			<a class="btn btn-pt btn-success" href="FlightPhaseEffect.html">Flight Phase Effect</a>
+		</div>
+		<div class="btn-group">
+			<a class="btn btn-pt btn-primary" href="LightCondEffects.html">Light Condition Effect</a>
+		</div>
+		<div class="btn-group">
+			<a class="btn btn-pt btn-warning" href="Causesaswordcloud.html">Major Causes WordCloud</a>
+		</div>
+		<div class="btn-group">
+			<a class="btn btn-pt btn-info" href="CausesDetailTree.html">Detailed Causes WordTree</a>
+		</div>
+		<div class="btn-group">
+			<a class="btn btn-pt btn-danger" href="Geochart.html">Geomapping</a>
+		</div>
+	</div>
+</div>
+
+	<script type="text/javascript" src="./js/jquerymin.js"></script>
+		<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+     	<script type="text/javascript" src="./js/LightConditionEffects.js"></script>
+
+
+<div class="container">
+     	<p class="description">This chart shows correlation between light conditions and aircraft accident trends.</p>
+     	
+     	<div id="bubble_chart" style="width: 1100px; height:800px; margin-bottom:40px;">
+     	<div class="preloader"></div>
+     	</div>
+</div>
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+</body>
+</html>
